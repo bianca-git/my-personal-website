@@ -1,0 +1,189 @@
+@use "sass:math";
+
+@import "./normalize.scss";
+@import "./fonts.scss";
+@import "./helpers.scss";
+@import "../node_modules/hsluv-sass";
+
+$primary-hue: 25;
+$primary-sat: 98;
+$primary-lit: 65;
+$primary-col: hsluv($primary-hue,$primary-sat,$primary-lit);
+
+$secondary-hue: 250;
+$secondary-sat: 100;
+$secondary-lit: 63;
+$secondary-col: hsluv($secondary-hue,$secondary-sat,$secondary-lit);
+
+$background-hue: 280;
+$background-sat: 100;
+$background-lit: 5;
+$background-col: hsluv($background-hue,$background-sat,$background-lit);
+
+$surface-lit: 10; // Added lightness to background lightness
+$surface-col: hsluv($background-hue,$background-sat,calc($surface-lit + $background-lit));
+
+@keyframes typing {
+  from {width: 0;}
+  50% {font-size: 6rem;}
+  to {width: 100%;}
+}
+
+@keyframes blink {
+  from {border-color: transparent;}
+  to {border-color: $secondary-col;}
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: content-box;
+}
+
+body {
+  color: white;
+  background-color: $background-col;
+  height: calc(100vh * 10);
+  max-width: 35rem;
+}
+
+a {
+  color: $primary-col;
+}
+
+a:hover {
+  color: $secondary-col;
+  text-decoration-style: double ;
+}
+
+nav {
+  position: fixed;
+  height: 1.5rem;
+  width: calc(100vw - 2rem);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $background-col;
+  box-shadow: 0 3px 5px $secondary-col;
+  color: $primary-col;
+  > * {
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    list-style-type: none;
+    background-color: $surface-col;
+    flex-direction: column;
+    top: 7rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translateX(120%);
+    transition: transform 0.5s ease-in;
+    li {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
+.nav-title {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+
+}
+
+.burger-menu {
+  display: block;
+  width: 1.5rem;
+  fill: inherit;
+}
+
+.show {
+  transform: translateX(0);
+}
+
+section {
+  background-color: $surface-col;
+}
+
+main > section {
+    padding: 3vh 3vw;
+    margin: 3vh 3vw;
+    height: 91vh;
+    width: 88vw;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+.home-title > * {
+  margin: 0;
+}
+
+.home-type {
+  display: block;
+  overflow: hidden;
+  border-right: .15em solid $secondary-col;
+  white-space: nowrap;
+  width: 0;
+  animation-name: typing, blink;
+  animation-duration: 1s;
+  animation-iteration-count: 1s, infinite;
+  animation-timing-function: steps(10, jump-none);
+}
+
+.delay-1s {
+  animation-delay: 1s;
+}
+
+.delay-2s {
+  animation-delay: 2s;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+/* For tablets: */
+/* @media only screen and (min-width: 600px) {
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+} */
+
+/* Style adjustments for viewports that meet the condition */
+@media only screen and (min-width: 35em) {
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;} 
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;} 
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;} 
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
