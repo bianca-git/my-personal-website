@@ -135,22 +135,46 @@ main {
 main > section {
     padding: 3vh 3vw;
     margin: 3vh 3vw;
-    height: 91vh;
+    height: 84vh;
     width: 88vw;
     border-radius: 1rem;
     overflow: hidden;
   }
 
-.home-title > * {
+  .home {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(2, 35%) auto; 
+    gap: 0px 0px; 
+  }
+
+.home-image {
+  max-width: 70%;
+  max-height: 100%;
+  place-self: center;
+  border-radius:40%;
+  filter: drop-shadow(0 0 1em $primary-col);
+}
+
+.home-title {
+  padding: 0 .2em ;
   margin: 0;
+  align-self: center;
+}
+
+.home-description {
+  padding: .2em;
+  margin: 0;
+  align-self: baseline;
+
 }
 
 .home-name-highlight {
-  color: $primary-col;
+  color: $secondary-col;
 }
 
 .ti-cursor {
-  color: $primary-col !important;
+  color: $secondary-col !important;
 }
 
 /* For mobile phones: */
