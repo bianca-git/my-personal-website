@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Bianca's Site</title>
@@ -14,10 +15,11 @@
     <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet" href="css/main.scss">
 </head>
+
 <body>
     <!-- Add your site or application content here -->
     <nav id="menu">
-        <p class="nav-title">Bianca Wilkinson</p>
+        <p class="nav-title">bianca.codes</p>
         <div>
             <ul class="sidenav" id="mySidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -31,10 +33,8 @@
     </nav>
     <main>
         <section class="home" id="home">
-            <h1>Hi, I am Bianca, and I am a</h1>
-            <h2 class="home-type">Identify 1</h2>
-            <h2 class="home-type delay-1s">Identify 2</h2>
-            <h2 class="home-type delay-2s">Identify 3</h2>
+            <h1>Hi!<br />My name is <span class="home-name-highlight">Bianca</span>.</h1>
+            <h3 id="thingsIAm"></h3>
         </section>
         <section class="hero" id="about">
             <img src="https://picsum.photos/100" alt="bianca" loading="lazy" class="hero-img" />
@@ -159,9 +159,11 @@
         </footer>
     </main>
     <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/typeit.js"></script>
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/navigation.js"></script>
+
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <!--   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
@@ -169,4 +171,5 @@
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script> -->
 </body>
+
 </html>

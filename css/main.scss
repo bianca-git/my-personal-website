@@ -23,17 +23,6 @@ $background-col: hsluv($background-hue,$background-sat,$background-lit);
 $surface-lit: 10; // Added lightness to background lightness
 $surface-col: hsluv($background-hue,$background-sat,calc($surface-lit + $background-lit));
 
-@keyframes typing {
-  from {width: 0;}
-  50% {font-size: 6rem;}
-  to {width: 100%;}
-}
-
-@keyframes blink {
-  from {border-color: transparent;}
-  to {border-color: $secondary-col;}
-}
-
 html {
   scroll-behavior: smooth;
   box-sizing: content-box;
@@ -156,24 +145,12 @@ main > section {
   margin: 0;
 }
 
-.home-type {
-  display: block;
-  overflow: hidden;
-  border-right: .15em solid $secondary-col;
-  white-space: nowrap;
-  width: 0;
-  animation-name: typing, blink;
-  animation-duration: 1s;
-  animation-iteration-count: 1s, infinite;
-  animation-timing-function: steps(10, jump-none);
+.home-name-highlight {
+  color: $primary-col;
 }
 
-.delay-1s {
-  animation-delay: 1s;
-}
-
-.delay-2s {
-  animation-delay: 2s;
+.ti-cursor {
+  color: $primary-col !important;
 }
 
 /* For mobile phones: */
@@ -198,7 +175,7 @@ main > section {
 } */
 
 /* Style adjustments for viewports that meet the condition */
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 40em) {
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
   .col-3 {width: 25%;} 

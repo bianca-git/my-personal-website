@@ -19,6 +19,7 @@
   "dependencies": {
     "hsluv": "^0.1.0",
     "hsluv-sass": "^2.0.1",
-    "sass": "^1.47.0"
+    "sass": "^1.47.0",
+    "typeit": "^8.2.0"
   }
 }
