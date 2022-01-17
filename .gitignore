@@ -4,5 +4,7 @@
 node_modules
 dist
 .cache
+.package-cache
+.package-lock.json
 # Local Netlify folder
 .netlify
