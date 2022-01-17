@@ -144,11 +144,16 @@ main > section {
   .home {
     display: grid;
     grid-template-columns: 1fr; 
-    grid-template-rows: repeat(2, 35%) auto; 
+    grid-template-rows: 35% 30% 35%; 
     gap: 0px 0px; 
+    grid-template-areas: 
+    "home-title"
+    "home-description"
+    "home-image"; 
   }
 
 .home-image {
+  grid-area: home-image;
   max-width: 70%;
   max-height: 100%;
   place-self: center;
@@ -157,12 +162,14 @@ main > section {
 }
 
 .home-title {
+  grid-area: home-title;
   padding: 0 .2em ;
   margin: 0;
   align-self: center;
 }
 
 .home-description {
+  grid-area: home-description; 
   padding: .2em;
   margin: 0;
   align-self: baseline;
@@ -212,4 +219,13 @@ main > section {
   .col-10 {width: 83.33%;}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
+
+  .home {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "home-image home-title"
+      "home-image home-description";
+  }
+    
 }
