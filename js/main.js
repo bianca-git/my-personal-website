@@ -1,3 +1,5 @@
+// Rainbow background code
+
 const hsluv = require("hsluv")
 
 function rainbowBackground() {
