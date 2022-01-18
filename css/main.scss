@@ -5,11 +5,13 @@
 @import "./helpers.scss";
 @import "../node_modules/hsluv-sass";
 
+$primary-rgb: #fe752e;
 $primary-hue: 25;
 $primary-sat: 98;
 $primary-lit: 65;
 $primary-col: hsluv($primary-hue,$primary-sat,$primary-lit);
 
+$secondary-rgb: #369bff;
 $secondary-hue: 250;
 $secondary-sat: 100;
 $secondary-lit: 63;
@@ -20,6 +22,7 @@ $background-sat: 100;
 $background-lit: 5;
 $background-col: hsluv($background-hue,$background-sat,$background-lit);
 
+$rainbow-gradient: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
 $surface-lit: 10; // Added lightness to background lightness
 $surface-col: hsluv($background-hue,$background-sat,calc($surface-lit + $background-lit));
 
@@ -128,23 +131,30 @@ section {
   background-color: $surface-col;
 }
 
-main {
+.main {
+  overflow-y:scroll;
+  scroll-snap-type: y proximity;
   padding-top: 3rem;
+  scroll-padding-top: 3rem;
 }
 
-main > section {
-    padding: 3vh 3vw;
+.main section {
+    scroll-snap-align: start;
     margin: 3vh 3vw;
+    border-radius: 1rem;
+
+  }
+
+  .section-container {
+    padding: 3vh 3vw;
     height: 84vh;
     width: 88vw;
-    border-radius: 1rem;
-    overflow: hidden;
   }
 
   .home {
     display: grid;
     grid-template-columns: 1fr; 
-    grid-template-rows: 35% 30% 35%; 
+    grid-template-rows: 30% 30% 35%; 
     gap: 0px 0px; 
     grid-template-areas: 
     "home-title"
@@ -155,29 +165,29 @@ main > section {
 .home-image {
   grid-area: home-image;
   max-width: 70%;
-  max-height: 100%;
+  max-height: 120%;
   place-self: center;
   border-radius:40%;
-  filter: drop-shadow(0 0 1em $primary-col);
+  filter: drop-shadow(0 0 1em $secondary-col);
 }
 
 .home-title {
   grid-area: home-title;
   padding: 0 .2em ;
   margin: 0;
-  align-self: center;
+  align-self:center;
 }
 
 .home-description {
   grid-area: home-description; 
   padding: .2em;
   margin: 0;
-  align-self: baseline;
+  align-self: flex-start;
 
 }
 
 .home-name-highlight {
-  color: $secondary-col;
+  color: $primary-col;
 }
 
 .ti-cursor {
@@ -226,6 +236,10 @@ main > section {
     grid-template-areas:
       "home-image home-title"
       "home-image home-description";
+  }
+
+  .home-image {
+    max-height: 90%;
   }
     
 }

@@ -10,6 +10,10 @@
     <meta property="og:type" content="">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat+Alternates:wght@500&display=swap"
+        rel="stylesheet">
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -32,13 +36,15 @@
         </div>
         <img src="./img/icons/menu-icon.svg" class="burger-menu" onclick="openNav()" />
     </nav>
-    <main>
-        <section class="home" id="home">
-            <img class="home-image" src="img/profile.svg" />
-            <h1 class="home-title">Hi!<br />My name is <span class="home-name-highlight">Bianca</span>.</h1>
-            <h2 class="home-description" id="thingsIAm"></h2>
+    <main class="main">
+        <section >
+            <div class="section-container home" id="home">
+                <img class="home-image" src="img/profile.png" />
+                <h1 class="home-title">My name is <span class="home-name-highlight">Bianca</span>.</h1>
+                <h2 class="home-description" id="thingsIAm"></h2>
+            </div>
         </section>
-        <section class="hero" id="about">
+        <section class="about" id="about">
             <img src="https://picsum.photos/100" alt="bianca" loading="lazy" class="hero-img" />
             <div class="bio animate__animated animate__shakeX">
                 <h2 class="bio-title">About Me</h2>
