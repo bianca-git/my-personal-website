@@ -230,7 +230,7 @@ section {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 
-  .home {
+  section .home {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
@@ -239,7 +239,7 @@ section {
   }
 
   .home-image {
-    max-height: 90%;
+    max-height: 90vh;
   }
     
 }
