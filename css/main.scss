@@ -9,38 +9,59 @@ $primary-rgb: #fe752e;
 $primary-hue: 25;
 $primary-sat: 98;
 $primary-lit: 65;
-$primary-col: hsluv($primary-hue,$primary-sat,$primary-lit);
+$primary-col: hsluv($primary-hue, $primary-sat, $primary-lit);
 
 $secondary-rgb: #369bff;
 $secondary-hue: 250;
 $secondary-sat: 100;
 $secondary-lit: 63;
-$secondary-col: hsluv($secondary-hue,$secondary-sat,$secondary-lit);
+$secondary-col: hsluv($secondary-hue, $secondary-sat, $secondary-lit);
 
 $background-hue: 280;
 $background-sat: 100;
 $background-lit: 5;
-$background-col: hsluv($background-hue,$background-sat,$background-lit);
+$background-col: hsluv($background-hue, $background-sat, $background-lit);
 
-$rainbow-gradient: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+$rainbow-gradient: linear-gradient(
+  to right,
+  red,
+  orange,
+  yellow,
+  green,
+  blue,
+  indigo,
+  violet
+);
 $surface-lit: 10; // Added lightness to background lightness
-$surface-col: hsluv($background-hue,$background-sat,calc($surface-lit + $background-lit));
+$surface-col: hsluv(
+  $background-hue,
+  $background-sat,
+  calc($surface-lit + $background-lit)
+);
 
 html {
+}
+
+* {
   scroll-behavior: smooth;
-  box-sizing: content-box;
+  box-sizing: border-box ;
 }
 
 body {
   color: white;
   background-color: $background-col;
-  height: calc(100vh * 10);
-  max-width: 35rem;
+  padding-top: 3rem;
+  scroll-padding-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  
+
 }
 
 a {
   color: $primary-col;
-  background: linear-gradient(90deg, $primary-col, $primary-col) no-repeat right bottom / 0 100%;
+  background: linear-gradient(90deg, $primary-col, $primary-col) no-repeat right
+    bottom / 0 100%;
   transition: background-size 350ms;
   border-radius: 3px;
 }
@@ -52,18 +73,19 @@ a:where(:hover, :focus-visible) {
 }
 
 nav {
+  box-sizing: content-box;
   position: fixed;
-  height: 1.5rem;
-  width: 100vw;
-  padding: 1rem 3vw;
+  height: 2rem;
+  width: 99vw;
   top: 0;
   left: 0;
   z-index: 1;
-  display: grid;
-  grid-template-columns: max-content auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: $background-col;
   box-shadow: 0 3px 5px $secondary-col;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   color: $primary-col;
   ul {
     list-style-type: none;
@@ -114,7 +136,7 @@ nav {
   font-weight: 400;
   text-transform: uppercase;
   padding: 0;
-  margin:0;
+  margin: 0;
 }
 
 .burger-menu {
@@ -128,61 +150,45 @@ nav {
 }
 
 section {
+  width: 80vmax;
+  align-self: center;
+  height: 88vh;
+  margin: 2em;
+  border-radius: 1rem;
   background-color: $surface-col;
 }
 
-.main {
-  overflow-y:scroll;
-  scroll-snap-type: y proximity;
-  padding-top: 3rem;
-  scroll-padding-top: 3rem;
+.home {
+  display: grid;
+  align-items: flex-end;
+  grid-template-areas:
+    "home-image home-title"
+    "home-image home-description";
+    
+  justify-content: space-evenly;
 }
-
-.main section {
-    scroll-snap-align: start;
-    margin: 3vh 3vw;
-    border-radius: 1rem;
-
-  }
-
-  .section-container {
-    padding: 3vh 3vw;
-    height: 84vh;
-    width: 88vw;
-  }
-
-  .home {
-    display: grid;
-    grid-template-columns: 1fr; 
-    grid-template-rows: 30% 30% 35%; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-    "home-title"
-    "home-description"
-    "home-image"; 
-  }
 
 .home-image {
   grid-area: home-image;
-  max-width: 70%;
-  max-height: 120%;
-  place-self: center;
-  border-radius:40%;
-  filter: drop-shadow(0 0 1em $secondary-col);
+  display: block;
+  height: 80%;
+  padding: auto 0;
+  filter: drop-shadow(0 0 .5em $secondary-col);
 }
 
 .home-title {
   grid-area: home-title;
-  padding: 0 .2em ;
-  margin: 0;
-  align-self:center;
+  align-self: flex-end;
+  height: "100vmax";
+  width: "80vw";
 }
 
 .home-description {
-  grid-area: home-description; 
-  padding: .2em;
-  margin: 0;
-  align-self: flex-start;
+  grid-area: home-description;
+  display: grid;
+  align-self:baseline;
+  height: "100vmax";
+  width: "80vw";
 
 }
 
@@ -215,31 +221,31 @@ section {
   .col-s-12 {width: 100%;}
 } */
 
-/* Style adjustments for viewports that meet the condition */
-@media only screen and (min-width: 40em) {
-  .col-1 {width: 8.33%;}
-  .col-2 {width: 16.66%;}
-  .col-3 {width: 25%;} 
-  .col-4 {width: 33.33%;}
-  .col-5 {width: 41.66%;}
-  .col-6 {width: 50%;} 
-  .col-7 {width: 58.33%;}
-  .col-8 {width: 66.66%;}
-  .col-9 {width: 75%;} 
-  .col-10 {width: 83.33%;}
-  .col-11 {width: 91.66%;}
-  .col-12 {width: 100%;}
+// /* Style adjustments for viewports that meet the condition */
+// @media only screen and (max-width: 40em) {
+//   .col-1 {width: 8.33%;}
+//   .col-2 {width: 16.66%;}
+//   .col-3 {width: 25%;}
+//   .col-4 {width: 33.33%;}
+//   .col-5 {width: 41.66%;}
+//   .col-6 {width: 50%;}
+//   .col-7 {width: 58.33%;}
+//   .col-8 {width: 66.66%;}
+//   .col-9 {width: 75%;}
+//   .col-10 {width: 83.33%;}
+//   .col-11 {width: 91.66%;}
+//   .col-12 {width: 100%;}
 
-  section .home {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-      "home-image home-title"
-      "home-image home-description";
-  }
+// section .home {
+//   grid-template-columns: repeat(2, 1fr);
+//   grid-template-rows: repeat(2, 1fr);
+//   grid-template-areas:
+//     "home-image home-title"
+//     "home-image home-description";
+// }
 
-  .home-image {
-    max-height: 90vh;
-  }
-    
-}
+// .home-image {
+//   max-height: 90vh;
+// }
+
+// }
