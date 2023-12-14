@@ -1,11 +1,11 @@
 repo_name: bianca-git/my-personal-website
-report_id: d864f4c66fe9f079c3e983dad13f8860
+report_id: f73664b92665fad6589729e7cc802220
 repo_type: Public
-timestamp: '2023-11-30T16:51:32+00:00'
+timestamp: '2023-12-14T13:24:51+00:00'
 requested_by: bianca-git
 provider: github
 branch: main
-detected_tools_count: 8
+detected_tools_count: 10
 tools:
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -17,6 +17,29 @@ tools:
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
   detection_source: Repo Metadata
+- name: Sass
+  description: Syntactically Awesome Style Sheets
+  website_url: http://sass-lang.com/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: CSS Pre-processors / Extensions
+  image_url: https://img.stackshare.io/service/1171/jCR2zNJV.png
+  detection_source: package.json
+  last_updated_by: Bianca Wilkinson
+  last_updated_on: 2022-01-08 19:45:39.000000000 Z
+- name: pgvector
+  description: Open-source vector similarity search for Postgres
+  website_url: https://github.com/pgvector/pgvector/
+  open_source: false
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Database Tools
+  image_url: https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png
+  detection_source: LICENSE.txt
+  last_updated_by: Bianca Wilkinson
+  last_updated_on: 2022-01-08 19:45:39.000000000 Z
 - name: Git
   description: Fast, scalable, distributed revision control system
   website_url: http://git-scm.com/
@@ -47,7 +70,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: JS Build Tools / JS Task Runners
   image_url: https://img.stackshare.io/service/8054/fC6Wad-S_400x400.jpg
-  detection_source_url: github.com/bianca-git/my-personal-website/blob/main/package-lock.json
+  detection_source_url: https://github.com/bianca-git/my-personal-website/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Bianca W
   last_updated_on: 2022-01-17 16:37:10.000000000 Z
@@ -83,17 +106,14 @@ tools:
   detection_source: 404.html
   last_updated_by: Bianca Wilkinson
   last_updated_on: 2022-01-08 19:45:39.000000000 Z
-- name: sass
-  description: A pure JavaScript implementation of Sass
-  package_url: https://www.npmjs.com/sass
-  version: 1.69.5
-  license: MIT
+- name: LangChain
+  description: Build AI apps with LLMs through composability
+  website_url: https://github.com/hwchase17/langchain
   open_source: true
   hosted_saas: false
-  category: Libraries
-  sub_category: npm Packages
-  image_url: https://img.stackshare.io/package/16057/default_5fd43aeff4d6a935abc13737de01a0355210499d.png
-  detection_source_url: github.com/bianca-git/my-personal-website/blob/main/package-lock.json
-  detection_source: package.json
-  last_updated_by: Bianca W
-  last_updated_on: 2022-01-17 19:18:17.000000000 Z
+  category: Communications
+  sub_category: Large Language Model Tools
+  image_url: https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg
+  detection_source: LICENSE.txt
+  last_updated_by: Bianca Wilkinson
+  last_updated_on: 2022-01-08 19:45:39.000000000 Z
